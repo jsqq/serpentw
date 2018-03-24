@@ -1,0 +1,21 @@
+{
+  "id" : 0,
+  "xDimension" : 10,
+  "yDimension" : 10,
+  "cellWidth" : 50,
+  "cellHeight" : 50,
+  "xDelta" : 1,
+  "yDelta" : 1,
+  "canvasStyle" : "border:1px solid black",
+  "fieldColor" : "green",
+  "serpentColor" : "red",
+  "xStartCell" : 5,
+  "yStartCell" : 5,
+  "startLengthOfSerpent" : 3,
+  "escKey" : 27,
+  "autoPressKeyTime" : 1000,
+  "arrows":[37,38,39,40],
+  "vectors":[[-1,0],[0,-1],[1,0],[0,1]],
+  "moveDelay": 500,
+  "serpent" : {}
+}
