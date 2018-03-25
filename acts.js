@@ -34,17 +34,24 @@ var intervalReleaseLastSeens;
 // id of SetInterval function that showing arrays of objects to server console
 var intervalLog;
 
+// generate random integer from min to max
+function randomInteger(min, max) {
+    var rand = min + Math.random() * (max + 1 - min);
+    rand = Math.floor(rand);
+    return rand;
+}
+
 // generate unique id
 function getuid() {
     do {
-        var rndID = Math.ceil(Math.random() * serverconfig.maxId);
+        var rndID = randomInteger(serverconfig.minId, serverconfig.maxId);
     } while (IDs.indexOf(rndID) > -1 );
     return rndID;
 }
 
 // store generated unique id to IDs array,
 // create objects of Field and Serpent for currunt id,
-// store generated unique id and serpent to clientconfig,
+// store generated unique id, start position and serpent to clientconfig,
 // then return generated clientconfig
 function completedClientConfig() {
     var id = getuid();
@@ -54,6 +61,9 @@ function completedClientConfig() {
     var myField = new Field(clientconfig);
     myField.id = id;
     Fields.push(myField);
+
+    clientconfig.xStartCell = randomInteger(0,clientconfig.xDimension-1);
+    clientconfig.yStartCell = randomInteger(0,clientconfig.yDimension-1);
 
     var mySerpent = new Serpent(clientconfig, myField);
     mySerpent.alive = true;

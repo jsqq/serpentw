@@ -1,5 +1,6 @@
 {
   "port": 3000,
+  "minId": 1,
   "maxId": 1000,
   "releaseDelay": 5000,
   "logInterval": 2500
